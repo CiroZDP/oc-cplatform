@@ -1,8 +1,8 @@
-name: Build latest (Windows)
+name: Compile for Windows
 on:
   push:
     branches:
-      - master
+      - '**'
   workflow_dispatch:
 
 concurrency:
