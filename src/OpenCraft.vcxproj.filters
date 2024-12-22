@@ -13,11 +13,14 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Header Files\netco">
-      <UniqueIdentifier>{fbd34d25-b2fa-4bbf-b645-ff5823b7a638}</UniqueIdentifier>
+    <Filter Include="Header Files\include">
+      <UniqueIdentifier>{864424d9-5015-4ce5-a014-cf93ee396b26}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\netco\internal">
-      <UniqueIdentifier>{429dd87b-97b5-4984-93ed-ba1bf23fd0c5}</UniqueIdentifier>
+    <Filter Include="Header Files\include\internal">
+      <UniqueIdentifier>{bc761a11-d510-48f5-ad80-11c1c4439fd2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\include\GLFW">
+      <UniqueIdentifier>{30ace093-25f6-4053-83a9-8986927b331b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -26,20 +29,26 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="netco\nc_stdint.h">
-      <Filter>Header Files\netco</Filter>
+    <ClInclude Include="include\nc_stdint.h">
+      <Filter>Header Files\include</Filter>
     </ClInclude>
-    <ClInclude Include="netco\netco.h">
-      <Filter>Header Files\netco</Filter>
+    <ClInclude Include="include\netco.h">
+      <Filter>Header Files\include</Filter>
     </ClInclude>
-    <ClInclude Include="netco\ncintern\osdetect.h">
-      <Filter>Header Files\netco\internal</Filter>
+    <ClInclude Include="include\ncintern\inttypes.h">
+      <Filter>Header Files\include\internal</Filter>
     </ClInclude>
-    <ClInclude Include="netco\ncintern\inttypes.h">
-      <Filter>Header Files\netco\internal</Filter>
+    <ClInclude Include="include\ncintern\osdetect.h">
+      <Filter>Header Files\include\internal</Filter>
     </ClInclude>
-    <ClInclude Include="netco\ncintern\tydetect.h">
-      <Filter>Header Files\netco\internal</Filter>
+    <ClInclude Include="include\ncintern\tydetect.h">
+      <Filter>Header Files\include\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GLFW\glfw.h">
+      <Filter>Header Files\include\GLFW</Filter>
+    </ClInclude>
+    <ClInclude Include="include\nc_stdbool.h">
+      <Filter>Header Files\include</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

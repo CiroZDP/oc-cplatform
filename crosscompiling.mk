@@ -3,7 +3,7 @@ CC = gcc
 CFLAGS =
 
 SOURCE_DIR=src
-INCLUDE_DIR=$(SOURCE_DIR)/netco
+INCLUDE_DIR=$(SOURCE_DIR)/include
 TARGET = oc-unix
 
 # Platform detection

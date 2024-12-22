@@ -124,7 +124,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>netco;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -137,11 +137,13 @@
     <ClCompile Include="main.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="netco\ncintern\inttypes.h" />
-    <ClInclude Include="netco\ncintern\osdetect.h" />
-    <ClInclude Include="netco\ncintern\tydetect.h" />
-    <ClInclude Include="netco\netco.h" />
-    <ClInclude Include="netco\nc_stdint.h" />
+    <ClInclude Include="include\GLFW\glfw.h" />
+    <ClInclude Include="include\ncintern\inttypes.h" />
+    <ClInclude Include="include\ncintern\osdetect.h" />
+    <ClInclude Include="include\ncintern\tydetect.h" />
+    <ClInclude Include="include\nc_stdbool.h" />
+    <ClInclude Include="include\nc_stdint.h" />
+    <ClInclude Include="include\netco.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

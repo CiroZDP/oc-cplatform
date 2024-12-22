@@ -2,7 +2,7 @@
 
 # These shouldn't be modified
 SOURCE_DIR=src
-INCLUDE_DIR=$(SOURCE_DIR)/netco
+INCLUDE_DIR=$(SOURCE_DIR)/include
 
 # Variables
 CC = gcc
