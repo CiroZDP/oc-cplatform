@@ -34,7 +34,7 @@ jobs:
         uses: ./.github/actions/upload_build
         if: ${{ always() && steps.compile.outcome == 'success' }}
         with:
-          SOURCE_FILE: 'build/oc_msdos.exe'
+          SOURCE_FILE: 'bin/oc_msdos.exe'
           DEST_NAME: 'OpenCraft.exe'
 
       - name: Notify success on Discord

@@ -3,7 +3,7 @@ PROJ_ROOT  = ../..
 SOURCE_DIR = $(PROJ_ROOT)/src
 SOURCES    = $(SOURCE_DIR)/*.c
 INCLUDES   = -I"$(SOURCE_DIR)/include/"
-TARGET_DIR = $(PROJ_ROOT)/build/
+TARGET_DIR = $(PROJ_ROOT)/bin
 
 # Compiler settings
 CC     = gcc

@@ -30,7 +30,7 @@ jobs:
         uses: ./.github/actions/upload_build
         if: ${{ always() && steps.compile.outcome == 'success' }}
         with:
-          SOURCE_FILE: 'build/oc_win32.exe'
+          SOURCE_FILE: 'bin/oc_win32.exe'
           DEST_NAME: 'OpenCraft-x32.exe'
 
       - name: Notify success on Discord
@@ -73,7 +73,7 @@ jobs:
         uses: ./.github/actions/upload_build
         if: ${{ always() && steps.compile.outcome == 'success' }}
         with:
-          SOURCE_FILE: 'build/oc_win64.exe'
+          SOURCE_FILE: 'bin/oc_win64.exe'
           DEST_NAME: 'OpenCraft-x64.exe'
 
       - name: Notify success on Discord
