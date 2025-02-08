@@ -1,4 +1,8 @@
 # include <terminal/common.h>
 # include <stdio.h>
 
-void Terminal_Clear() { printf("\e[1;1H\e[2J"); }
+# ifndef _ansiexp
+#   define _ansiexp(s) { printf(s); }
+# endif
+
+void Terminal_Clear()   _ansiexp("\e[1;1H\e[2J")
