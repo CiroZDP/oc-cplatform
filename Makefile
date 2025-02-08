@@ -25,10 +25,10 @@ default:
 mingw-all:	mingw-x32 mingw-x64
 
 mingw-x32:
-	@ cd build/windows && $(MAKE) CC=i686-w64-mingw32-gcc OS=win32 -f ubuntu.mingw.mk x32
+	@ cd build/windows && $(MAKE) CC=i686-w64-mingw32-gcc   -f ubuntu.mingw.mk x32
 
 mingw-x64:
-	@ cd build/windows && $(MAKE) CC=x86_64-w64-mingw32-gcc OS=win32 -f ubuntu.mingw.mk x64
+	@ cd build/windows && $(MAKE) CC=x86_64-w64-mingw32-gcc -f ubuntu.mingw.mk x64
 
 ###########################################################################
 # DJGPP on Debian

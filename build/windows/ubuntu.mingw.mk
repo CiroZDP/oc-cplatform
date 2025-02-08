@@ -42,7 +42,7 @@ $(O)/%.o:	$(CFILES)
 	@ $(CC) -c -o $@ $< $(LIBS)
 
 $(BIN)/terminal.a:
-	@ cd $(PROJ_ROOT)/dependencies && $(MAKE) OS=$(OS) CC=$(CC) dependency.terminal
+	@ cd $(PROJ_ROOT)/dependencies && $(MAKE) OS=win32 CC=$(CC) dependency.terminal
 
 always:
 	@ mkdir -p $(O)
