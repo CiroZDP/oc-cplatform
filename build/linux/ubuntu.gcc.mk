@@ -1,16 +1,51 @@
-# Project settings
-PROJ_ROOT  = ../..
-SOURCE_DIR = $(PROJ_ROOT)/src
-SOURCES    = $(SOURCE_DIR)/*.c
-INCLUDES   = -I"$(SOURCE_DIR)/include/"
-TARGET_DIR = $(PROJ_ROOT)/bin
+## Project settings
+  PROJ_ROOT   = ../..
+  SOURCE_DIR  = $(PROJ_ROOT)/src
+  BIN   = $(PROJ_ROOT)/bin
 
-# Compiler settings
-CC     = gcc
-CFLAGS = $(INCLUDES) -O2 -Wall
+  # Files
+    CFILES       = $(wildcard $(SOURCE_DIR)/*.c)
 
-x64: $(SOURCE_DIR)/main.c
-	mkdir -p $(TARGET_DIR) && $(CC) $(CFLAGS) -m64 $(SOURCES) -o $(TARGET_DIR)/oc_linux64
+  # Libraries
+    INCLUDE_DIR  = $(PROJ_ROOT)/include
+    LIBS        += $(BIN)/terminal.a
+    LIBS        += -I"$(INCLUDE_DIR)"
 
-x32: $(SOURCE_DIR)/main.c
-	mkdir -p $(TARGET_DIR) && $(CC) $(CFLAGS) -m32 $(SOURCES) -o $(TARGET_DIR)/oc_linux32
+## Output / Build
+
+  # Objects
+    O      = $(BIN)/objects
+    OBJS  += $(addprefix $(O)/, $(notdir $(CFILES:.c=.o)))
+
+  # Targets
+    TARGET64  = $(BIN)/oc_linux64
+    TARGET32  = $(BIN)/oc_linux32
+
+## Compiler settings
+  CC       = gcc
+  CFLAGS  += -O2 -Wall -static
+
+all:	$(TARGET32) $(TARGET64)
+x32:	$(TARGET32)
+x64:	$(TARGET64)
+
+$(TARGET32):	always $(BIN)/terminal.a $(OBJS)
+	@ $(CC)	$(CFLAGS) -m32 -o $(TARGET32) $(OBJS) $(LIBS)
+	@ echo "   \e[96m▌ info:\e[0m The file was saved at $(TARGET32)"
+
+$(TARGET64):	always $(BIN)/terminal.a $(OBJS)
+	@ $(CC)	$(CFLAGS) -m64 -o $(TARGET64) $(OBJS) $(LIBS)
+	@ echo "   \e[96m▌ info:\e[0m The file was saved at $(TARGET64)"
+
+# Helpers for object building
+$(O)/%.o:	$(CFILES)
+	@ echo "   \e[96mBuilding\e[0m \`$<'"
+	@ $(CC) -c -o $@ $< $(LIBS)
+
+$(BIN)/terminal.a:
+	@ cd $(PROJ_ROOT)/dependencies && $(MAKE) OS=linux CC=$(CC) dependency.terminal
+
+always:
+	@ mkdir -p $(O)
+
+.PHONY:	always
