@@ -24,8 +24,6 @@
 ## Compiler settings
   CFLAGS  += -O2 -Wall -static
 
-# x86_64-w64-mingw32-gcc | i686-w64-mingw32-gcc
-
 all:	$(TARGET32) $(TARGET64)
 x32:	$(TARGET32)
 x64:	$(TARGET64)
