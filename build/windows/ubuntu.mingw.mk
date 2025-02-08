@@ -32,15 +32,15 @@ x64:	$(TARGET64)
 
 $(TARGET32):	always $(BIN)/terminal.a $(OBJS)
 	@ $(CC)	$(CFLAGS) -m32 -o $(TARGET32) $(OBJS) $(LIBS)
-	@ echo -e "   \e[96m▌ info:\e[0m The file was saved at $(TARGET32)"
+	@ echo "   \e[96m▌ info:\e[0m The file was saved at $(TARGET32)"
 
 $(TARGET64):	always $(BIN)/terminal.a $(OBJS)
 	@ $(CC)	$(CFLAGS) -m64 -o $(TARGET64) $(OBJS) $(LIBS)
-	@ echo -e "   \e[96m▌ info:\e[0m The file was saved at $(TARGET64)"
+	@ echo "   \e[96m▌ info:\e[0m The file was saved at $(TARGET64)"
 
 # Helpers for object building
 $(O)/%.o:	$(CFILES)
-	@ echo -e "   \e[96mBuilding\e[0m \`$<'"
+	@ echo "   \e[96mBuilding\e[0m \`$<'"
 	@ $(CC) -c -o $@ $< $(LIBS)
 
 $(BIN)/terminal.a:

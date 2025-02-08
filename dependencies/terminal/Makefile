@@ -30,7 +30,7 @@ $(O)/%.o:
 	else \
 	    SRC="$(SOURCE_DIR)/$(OS)/$*.c"; \
 	fi; \
-	echo -e "   \e[96mBuilding\e[0m \`$$SRC'"; \
+	echo "   \e[96mBuilding\e[0m \`$$SRC'"; \
 	$(CC) $(CFLAGS) -o $@ $$SRC $(LIBS)
 
 always:
