@@ -1,5 +1,5 @@
 # Inputs needed by the global Makefile:
-  BIN      = ../../bin
+  BIN      = ../bin
   TARGET   = $(BIN)/oc_msdos.exe
 
 all:	$(TARGET)

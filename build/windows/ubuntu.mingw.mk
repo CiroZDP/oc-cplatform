@@ -1,5 +1,5 @@
 # Inputs needed by the global Makefile:
-  BIN      = ../../bin
+  BIN      = ../bin
   TARGET32 = $(BIN)/oc_win32.exe
   TARGET64 = $(BIN)/oc_win64.exe
 

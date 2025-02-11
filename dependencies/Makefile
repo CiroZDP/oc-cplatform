@@ -1,5 +1,5 @@
 ### Inputs: [ CC, OS ] ###
-PROJ_ROOT = ../..
+PROJ_ROOT = ..
 O         = $(PROJ_ROOT)/bin/objects
 
 all:	dependency.terminal
