@@ -1,4 +1,4 @@
-### Inputs: [ O, CC, OS ] ###
+### Inputs: [ O, CC, OS, ARCH ] ###
 
 ## Project settings
   PROJ_ROOT  = ../..
@@ -20,7 +20,7 @@
     TARGET = $(BIN)/terminal.a
 
 ## Compiler settings
-  CFLAGS += -O2 -Wall -c -fPIC
+  CFLAGS += -O2 -Wall -c -fPIC -m$(ARCH)
 
 all:	always $(OBJS) buildlib cleanobjs
 
